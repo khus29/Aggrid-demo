@@ -35,6 +35,11 @@ const AggridForm = ({ handleFormSubmit }) => {
                     <option value="true">true</option>
                     <option value="false">false</option>
                 </select>
+                <label>Enable Chart</label>
+                <select {...register("chart")}>
+                    <option value="true">true</option>
+                    <option value="false">false</option>
+                </select>
                 <label>Row selection</label>
                 <select {...register("rowSelection")}>
                     <option value="single">single</option>
@@ -51,9 +56,9 @@ const AggridForm = ({ handleFormSubmit }) => {
                     <label>Column properties</label>
                     <span className="mr-10"><input type='checkbox' {...register("col.sort")} />Sort</span>
                     <span className="mr-10"> <input type='checkbox' {...register("col.filter")} />Filter</span>
-                    <span className="mr-10"><input type='checkbox' {...register("col.checkBoxSelection")} />Checkbox selection</span>
+                    <span className="mr-10"><input type='checkbox' {...register("col.rowGroup")} />Row Group</span>
                 </div>
-                <label>Row Details</label>
+                <label>Row Data</label>
                 {[...Array(rowCount)].map((e, i) => renderRow(i))}
                 <input type='hidden'  {...register("rowCount")} />
 
