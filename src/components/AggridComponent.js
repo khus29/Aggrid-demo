@@ -9,14 +9,14 @@ import {chartThemeOverrides, colsConfig} from './chartConfig'
 
 const AggridComponent = ({ showPagination, rowSelection, rowData, enableChart, colProps}) => {
     const gridRef = useRef();
-    const {filter, sort, rowGroup, make, model, price} = colProps
+    const {filter, sort, rowGroup, id, systemCode, system,caption,viewType} = colProps
     const [gridApi, setGridApi] = useState(undefined)
     const [gridColApi, setGridColApi] = useState(undefined)
     const [colDefsData, setColDefsData] = useState([])
     
     useEffect(() => {
         const colDefs = []
-        const cols = colsConfig(make, model, price)
+        const cols = colsConfig(id, systemCode, system,caption,viewType)
         cols.forEach(colItem => {
             if(colItem.show) {
                 const matchedCol = colDefsData.find(o => o.field === colItem.key)
@@ -28,7 +28,7 @@ const AggridComponent = ({ showPagination, rowSelection, rowData, enableChart, c
             }
         })
         setColDefsData(colDefs)
-    }, [make, model, price])
+    }, [id, systemCode, system,caption,viewType])
 
     useEffect(() => {
         if(gridApi) {

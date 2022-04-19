@@ -20,9 +20,12 @@ const AggridForm = ({ handleFormSubmit }) => {
         return (
             <div key={i}>
                 <div>*************************************************************</div>
-                Make<input {...register(`row.make[${i}]`)} />
-                Model<input {...register(`row.model[${i}]`)} />
-                Price<input {...register(`row.price[${i}]`)} />
+                id<input {...register(`row.id[${i}]`)} />
+                System Code<input {...register(`row.systemCode[${i}]`)} />
+                System<input {...register(`row.system[${i}]`)} />
+                Caption<input {...register(`row.caption[${i}]`)}/>
+                View Type<input {...register(`row.viewType[${i}]`)}/>
+
             </div>
         )
     }
@@ -32,8 +35,8 @@ const AggridForm = ({ handleFormSubmit }) => {
             <fieldset>
                 <label>Show Pagination</label>
                 <select {...register("pagination")}>
-                    <option value="true">true</option>
                     <option value="false">false</option>
+                    <option value="true">true</option>
                 </select>
                 <label>Enable Chart</label>
                 <select {...register("chart")}>
@@ -48,9 +51,11 @@ const AggridForm = ({ handleFormSubmit }) => {
 
                 <div>
                     <label>Column Definition</label>
-                    <span className="mr-10"><input type='checkbox' {...register("col.make")} />Make</span>
-                    <span className="mr-10"><input type='checkbox' {...register("col.model")} />Model</span>
-                    <span className="mr-10"><input type='checkbox' {...register("col.price")} />Price</span>
+                    <span className="mr-10"><input type='checkbox' {...register("col.id")} />Id</span>
+                    <span className="mr-10"><input type='checkbox' {...register("col.systemCode")} />System Code</span>
+                    <span className="mr-10"><input type='checkbox' {...register("col.system")} />System</span>
+                    <span className="mr-10"><input type='checkbox' {...register("col.caption")} />Caption</span>
+                    <span className="mr-10"><input type='checkbox' {...register("col.viewType")} />ViewType</span>
                 </div>
                 <div>
                     <label>Column properties</label>

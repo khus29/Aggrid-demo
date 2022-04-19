@@ -21,19 +21,27 @@ export const chartThemeOverrides = {
     }
 }
 
-export const colsConfig = (make, model, price) =>  {
+export const colsConfig = (id, systemCode, system,caption,viewType) =>  {
     return [
         {
-            key: 'make',
-            show: make
+            key: 'id',
+            show: id
         },
         {
-            key: 'model',
-            show: model
+            key: 'systemCode',
+            show: systemCode
         },
         {
-            key: 'price',
-            show: price
+            key: 'system',
+            show: system
+        },
+        {
+            key: 'caption',
+            show: caption
+        },
+        {
+            key: 'viewType',
+            show: viewType
         }
     ]
 }
