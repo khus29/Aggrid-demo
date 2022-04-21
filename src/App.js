@@ -7,6 +7,7 @@ import './App.css'
 function App() {
   const rowMockData = [
     { "id": 6, "systemCode": "dashboard 3563be12", "system": "PFW","caption":"Stoxx SI Binder Cmpt","viewType":9},
+    { "id": 6, "systemCode": "dashboard 3563be12", "system": "PFW","caption":"Stoxx SI Binder Cmpt","viewType":9},
     { "id": 7, "systemCode": "dashboard 3318864c", "system": "PFW","caption":"R3000 SI Binder","viewType":9 },
     { "id": 25, "systemCode": "web query tool 4a2bc1a8", "system": "PFW","caption":"QAAutoDemo","viewType":9 },
     { "id": 337, "systemCode": "dashboard 03f51ceb", "system": "PFW","caption":"Demo Filter","viewType":9 },
@@ -29,8 +30,6 @@ function App() {
 
   const handleFormSubmit = (formData) => {
     const colProps = formData.col
-
-
     const rowCount = formData.row.id.length
     const formRowData = [...Array(rowCount)].map((value, index) => {
       return { id: formData.row.id[index], systemCode: formData.row.systemCode[index], system: formData.row.system[index], caption:formData.row.caption[index],viewType:formData.row.viewType[index] }

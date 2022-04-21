@@ -63,6 +63,7 @@ const AggridForm = ({ handleFormSubmit }) => {
                     <span className="mr-10"> <input type='checkbox' {...register("col.filter")} />Filter</span>
                     <span className="mr-10"><input type='checkbox' {...register("col.rowGroup")} />Row Group</span>
                 </div>
+
                 <label>Row Data</label>
                 {[...Array(rowCount)].map((e, i) => renderRow(i))}
                 <input type='hidden'  {...register("rowCount")} />
